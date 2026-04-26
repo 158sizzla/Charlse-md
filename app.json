@@ -1,0 +1,33 @@
+{
+  "name": "charlse-md",
+  "description": "WhatsApp Web bot deployed on Heroku",
+  "repository": "https://github.com/158sizzla/Charlse-md",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Set the environment mode for the app",
+      "value": "production"
+    },
+    "SESSION_ACCESS_TOKEN": {
+      "description": "Secret token for retrieving session data",
+      "value": "change-me"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo 'Heroku deployment complete'"
+  }
+}
